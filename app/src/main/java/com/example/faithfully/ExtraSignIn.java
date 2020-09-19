@@ -55,7 +55,7 @@ public class ExtraSignIn extends AppCompatActivity {
                 }
                 else{
                     //it has been set so we go to users timeline
-                    startActivity(new Intent(ExtraSignIn.this, UserActivity.class));
+                    startActivity(new Intent(ExtraSignIn.this, HomePageActivity.class));
                 }
 
             }
@@ -119,7 +119,7 @@ public class ExtraSignIn extends AppCompatActivity {
             }
             else{
                 //it has been set so we go to users timeline
-                startActivity(new Intent(ExtraSignIn.this, UserActivity.class));
+                startActivity(new Intent(ExtraSignIn.this, HomePageActivity.class));
             }
         }
     }

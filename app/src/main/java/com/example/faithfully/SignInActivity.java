@@ -1,6 +1,5 @@
 package com.example.faithfully;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +10,6 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -36,19 +33,18 @@ public class SignInActivity extends AppCompatActivity {
         if (auth.getCurrentUser() != null) {
             // already signed in
 
-                //if the account is verified, check the shared preference for if religion has been picked
-                //TODO: if it hasnt we go to chooseReligion activity
-                // TODO: if it has we go straight to users timeline
-                String religionType = PreferenceSettings.getReligionType(this);
+            //if the account is verified, check the shared preference for if religion has been picked
+            //TODO: if it hasnt we go to chooseReligion activity
+            // TODO: if it has we go straight to users timeline
+            String religionType = PreferenceSettings.getReligionType(this);
 
-                if(religionType == null){
-                    //religion type hasn't been set
-                    startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
-                }
-                else{
-                    //it has been set so we go to users timeline
-                    startActivity(new Intent(SignInActivity.this, UserActivity.class));
-                }
+            if (religionType == null) {
+                //religion type hasn't been set
+                startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
+            } else {
+                //it has been set so we go to users timeline
+                startActivity(new Intent(SignInActivity.this, HomePageActivity.class));
+            }
 
         } else {
             // not signed in, start firebaseUI authentication flow
@@ -76,20 +72,19 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
 
-        if(user != null){
+        if (user != null) {
 
             //check the shared preference for if religion has been picked
             //TODO: if it hasnt we go to chooseReligion activity
             // TODO: if it has we go straight to users timeline
             String religionType = PreferenceSettings.getReligionType(this);
 
-            if(religionType == null){
+            if (religionType == null) {
                 //religion type hasn't been set
                 startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
-            }
-            else{
+            } else {
                 //it has been set so we go to users timeline
-                startActivity(new Intent(SignInActivity.this, UserActivity.class));
+                startActivity(new Intent(SignInActivity.this, HomePageActivity.class));
                 finish();
             }
         }
