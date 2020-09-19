@@ -19,8 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 import java.util.List;
 
-public class SignInActivity extends AppCompatActivity {
-    public static final String TAG = SignInActivity.class.getSimpleName();
+public class ExtraSignIn extends AppCompatActivity {
+    public static final String TAG = ExtraSignIn.class.getSimpleName();
     static final private int RC_SIGN_IN = 1111;
 
 
@@ -36,6 +36,14 @@ public class SignInActivity extends AppCompatActivity {
         if (auth.getCurrentUser() != null) {
             // already signed in
 
+            //i would check if the email is verified here [email verification is only for email/password login,
+            // if it isnt i would take them to an activity that only lets them leave when their email is verified
+            //on that activity give them an opportunity to use a different email address
+            // (this button will log out the current user and take them back to the sign up activity)
+
+            if (auth.getCurrentUser().isEmailVerified()){
+                Log.i(TAG, "user is verified");
+
                 //if the account is verified, check the shared preference for if religion has been picked
                 //TODO: if it hasnt we go to chooseReligion activity
                 // TODO: if it has we go straight to users timeline
@@ -43,12 +51,33 @@ public class SignInActivity extends AppCompatActivity {
 
                 if(religionType == null){
                     //religion type hasn't been set
-                    startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
+                    startActivity(new Intent(ExtraSignIn.this, ChooseReligion.class));
                 }
                 else{
                     //it has been set so we go to users timeline
-                    startActivity(new Intent(SignInActivity.this, UserActivity.class));
+                    startActivity(new Intent(ExtraSignIn.this, UserActivity.class));
                 }
+
+            }
+            else {
+                Log.i(TAG, "user is NOT verified");
+
+                //send verification email
+                auth.getCurrentUser().sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d("VERIFICATION EMAIL", "Email sent.");
+                                }
+                            }
+                        });
+
+                //if the user used email/password sign in we want to take them to the email verification activity
+                startActivity(new Intent(ExtraSignIn.this, VerifyEmail.class));
+            }
+
+
 
         } else {
             // not signed in, start firebaseUI authentication flow
@@ -77,24 +106,27 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();
 
         if(user != null){
+            Log.i(TAG, "user is verified");
 
-            //check the shared preference for if religion has been picked
+            //if the account is verified, check the shared preference for if religion has been picked
             //TODO: if it hasnt we go to chooseReligion activity
             // TODO: if it has we go straight to users timeline
             String religionType = PreferenceSettings.getReligionType(this);
 
             if(religionType == null){
                 //religion type hasn't been set
-                startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
+                startActivity(new Intent(ExtraSignIn.this, ChooseReligion.class));
             }
             else{
                 //it has been set so we go to users timeline
-                startActivity(new Intent(SignInActivity.this, UserActivity.class));
-                finish();
+                startActivity(new Intent(ExtraSignIn.this, UserActivity.class));
             }
         }
     }
 
+    private void newSignIn(){
+
+    }
 
     //When the sign-in flow is complete, you will receive the result in onActivityResult:
     @Override
@@ -110,9 +142,37 @@ public class SignInActivity extends AppCompatActivity {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                //if the user signs in take them to choose religion activity
-                startActivity(new Intent(SignInActivity.this, ChooseReligion.class));
+                //i would check if the email is verified here [email verification is only for email/password login,
+                // use to verify login provider : if("password".equals(currentUser.getProviderData().get(0).getProviderId())) ],
+                // if it isnt i would take them to an activity that only lets them leave when their email is verified
+                //on that activity give them an opportunity to use a different email address
+                // (this button will log out the current user and take them back to the sign up activity)
+                // ...
 
+
+                //if the user used email/password sign in we want to take them to the email verification activity
+                if (user.isEmailVerified()){
+                    Log.i(TAG, "user is verified");
+                    //TODO: if it is not an email/password login we want to take them straight to the chooseReligion activity
+                    startActivity(new Intent(ExtraSignIn.this, ChooseReligion.class));
+                }
+                else {
+                    Log.i(TAG, "user is NOT verified");
+
+                    //send verification email
+                    user.sendEmailVerification()
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d("VERIFICATION EMAIL", "Email sent.");
+                                    }
+                                }
+                            });
+
+                    //open verification activity
+                    startActivity(new Intent(ExtraSignIn.this, VerifyEmail.class));
+                }
             } else {
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
