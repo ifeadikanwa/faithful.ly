@@ -1,47 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ChooseReligion">
+
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="200dp"
+    android:text="Choose Your Religion:"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.614" />
+
+<Spinner
+    android:id="@+id/religionSpn"
+    android:layout_width="245dp"
+    android:layout_height="44dp"
+    android:layout_marginTop="26dp"
+    android:layout_marginBottom="380dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView2"
+    app:layout_constraintVertical_bias="0.192" />
+
+<Button
+    android:id="@+id/religionBtn"
+    android:layout_width="88dp"
+    android:layout_height="35dp"
+    android:layout_marginTop="92dp"
+    android:layout_marginBottom="240dp"
+    android:background="#03DAC5"
+    android:text="next"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/religionSpn" />
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:src="@drawable/ic_placeholder"
+    app:layout_constraintBottom_toTopOf="@+id/textView2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.288" />
+
+<TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ChooseReligion">
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Choose a Religion:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/holo_blue_bright"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/religionSpn"
-        android:layout_width="245dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="380dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <Button
-        android:id="@+id/religionBtn"
-        android:layout_width="88dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginBottom="240dp"
-        android:background="@android:color/holo_blue_bright"
-        android:text="next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/religionSpn" />
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/learning_curve_bold_ot_tt"
+    android:gravity="center"
+    android:text="faithful.ly"
+    android:textColor="#03DAC5"
+    android:textSize="50sp"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="195dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
