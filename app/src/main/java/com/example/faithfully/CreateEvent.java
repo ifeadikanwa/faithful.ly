@@ -170,7 +170,7 @@ public class CreateEvent extends AppCompatActivity {
 
         Toast.makeText(this, "Event Posted!", Toast.LENGTH_SHORT).show();
 
-//        finish();
+        finish();
     }
 
     private Date getDate() {
