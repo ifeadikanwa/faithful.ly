@@ -36,8 +36,10 @@ public class Bookmarks extends AppCompatActivity {
     }
 
     private void setupRecyclerview() {
-        Query query = FirestoreRepository.EventCollRef.whereEqualTo(FirestoreRepository.HOST_ID_FIELD, user.getUid())
-                .orderBy(FirestoreRepository.POST_TIME_FIELD, Query.Direction.DESCENDING);
+        Query query = FirestoreRepository.EventCollRef
+                .whereEqualTo(FirestoreRepository.HOST_ID_FIELD, user.getUid())
+                .whereEqualTo(FirestoreRepository.IS_BOOKMARKED_FIELD, true )
+                .orderBy(FirestoreRepository.BOOKMARK_TIME_FIELD, Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<Events> options = new FirestoreRecyclerOptions.Builder<Events>()
                 .setQuery(query, Events.class)

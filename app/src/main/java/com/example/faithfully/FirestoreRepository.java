@@ -19,6 +19,8 @@ public class FirestoreRepository {
 
     public static final String HOST_ID_FIELD = "host_ID";
     public static final String POST_TIME_FIELD = "post_time";
+    public static final String BOOKMARK_TIME_FIELD = "bookmark_time";
+    public static final String IS_BOOKMARKED_FIELD = "bookmarked";
 
     public static final CollectionReference UsersCollRef = firestoreRepository.collection("Users");
     public static final CollectionReference EventCollRef = firestoreRepository.collection("Events");
