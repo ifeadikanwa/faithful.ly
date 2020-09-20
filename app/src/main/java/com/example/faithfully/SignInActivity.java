@@ -105,7 +105,7 @@ public class SignInActivity extends AppCompatActivity {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                
+                FirestoreRepository.addUser(user.getUid());
 
                 //if the user signs in take them to choose religion activity
                 startActivity(new Intent(SignInActivity.this, ChooseReligion.class));

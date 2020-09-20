@@ -9,22 +9,24 @@ public class Events {
     private String title;
     private String description;
     private String meeting_link;
-    private String author_name;
-    private String author_ID;
+    private String host_name;
+    private String host_ID;
     private int max_guest_num;
     @ServerTimestamp private Date post_time;
     @ServerTimestamp private Date event_time;
     private List<String> target_religions;
+    private boolean bookmarked;
+    private boolean confirmed;
 
     public Events(){
     }
 
-    public Events(String title, String description, String meeting_link, String author_name, String author_ID, int max_guest_num, Date post_time, Date event_time, List<String> target_religions) {
+    public Events(String title, String description, String meeting_link, String host_name, String host_ID, int max_guest_num, Date post_time, Date event_time, List<String> target_religions) {
         this.title = title;
         this.description = description;
         this.meeting_link = meeting_link;
-        this.author_name = author_name;
-        this.author_ID = author_ID;
+        this.host_name = host_name;
+        this.host_ID = host_ID;
         this.max_guest_num = max_guest_num;
         this.post_time = post_time;
         this.event_time = event_time;
@@ -55,20 +57,20 @@ public class Events {
         this.meeting_link = meeting_link;
     }
 
-    public String getAuthor_name() {
-        return author_name;
+    public String getHost_name() {
+        return host_name;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setHost_name(String host_name) {
+        this.host_name = host_name;
     }
 
-    public String getAuthor_ID() {
-        return author_ID;
+    public String getHost_ID() {
+        return host_ID;
     }
 
-    public void setAuthor_ID(String author_ID) {
-        this.author_ID = author_ID;
+    public void setHost_ID(String host_ID) {
+        this.host_ID = host_ID;
     }
 
     public int getMax_guest_num() {
@@ -101,5 +103,21 @@ public class Events {
 
     public void setTarget_religions(List<String> target_religions) {
         this.target_religions = target_religions;
+    }
+
+    public boolean isBookmarked() {
+        return bookmarked;
+    }
+
+    public void setBookmarked(boolean bookmarked) {
+        this.bookmarked = bookmarked;
+    }
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
     }
 }
