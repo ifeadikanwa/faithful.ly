@@ -10,17 +10,47 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".VerifyEmail"
+            android:screenOrientation="portrait"
             android:noHistory="true">
 
         </activity>
-        <activity android:name=".ChooseReligion" >
+
+        <activity android:name=".ChooseReligion"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".HomePageActivity" >
+
+        <activity android:name=".HomePageActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".SignInActivity">
+        <activity android:name=".ConfirmedEvents"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomePageActivity">
+
+        </activity>
+
+        <activity android:name=".CreateEvent"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomePageActivity">
+
+        </activity>
+
+        <activity android:name=".EventFeed"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomePageActivity">
+
+        </activity>
+
+        <activity android:name=".MyEvents"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomePageActivity">
+
+        </activity>
+
+        <activity android:name=".SignInActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
