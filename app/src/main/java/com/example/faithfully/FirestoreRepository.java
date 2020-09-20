@@ -19,8 +19,12 @@ public class FirestoreRepository {
 
     public static final String HOST_ID_FIELD = "host_ID";
     public static final String POST_TIME_FIELD = "post_time";
+    public static final String EVENT_TIME_FIELD = "event_time";
     public static final String BOOKMARK_TIME_FIELD = "bookmark_time";
     public static final String IS_BOOKMARKED_FIELD = "bookmarked";
+    public static final String IS_CONFIRMED_FIELD = "confirmed";
+    public static final String MILLI_POST_TIME_FIELD = "MillisPostTime";
+
 
     public static final CollectionReference UsersCollRef = firestoreRepository.collection("Users");
     public static final CollectionReference EventCollRef = firestoreRepository.collection("Events");
@@ -44,7 +48,9 @@ public class FirestoreRepository {
 
     public static void createEvent(String title, String description, String meeting_link, String host_name, String host_ID, int max_guest_num, Date post_time, Date event_time, List<String> target_religions){
         Events event = new Events(title, description, meeting_link, host_name, host_ID, max_guest_num, null, event_time, target_religions);
-
+        long milli_time = event_time.getTime();
+        Log.i(TAG, String.valueOf(milli_time));
+        event.setMillisPostTime(milli_time);
         EventCollRef.add(event)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

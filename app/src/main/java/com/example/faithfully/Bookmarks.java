@@ -37,7 +37,6 @@ public class Bookmarks extends AppCompatActivity {
 
     private void setupRecyclerview() {
         Query query = FirestoreRepository.EventCollRef
-                .whereEqualTo(FirestoreRepository.HOST_ID_FIELD, user.getUid())
                 .whereEqualTo(FirestoreRepository.IS_BOOKMARKED_FIELD, true )
                 .orderBy(FirestoreRepository.BOOKMARK_TIME_FIELD, Query.Direction.DESCENDING);
 
@@ -47,7 +46,7 @@ public class Bookmarks extends AppCompatActivity {
 
         adapter = new EventAdapter(options);
 
-        recyclerView  = findViewById(R.id.myEventsRecyclerView);
+        recyclerView  = findViewById(R.id.bookmarksRecyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         LinearLayoutManager VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
