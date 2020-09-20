@@ -15,8 +15,10 @@ public class Events {
     @ServerTimestamp private Date post_time;
     @ServerTimestamp private Date event_time;
     private List<String> target_religions;
+    private int confirmations;
     private boolean bookmarked;
     private boolean confirmed;
+    private boolean bookmark_time;
 
     public Events(){
     }
@@ -119,5 +121,21 @@ public class Events {
 
     public void setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
+    }
+
+    public int getConfirmations() {
+        return confirmations;
+    }
+
+    public void setConfirmations(int confirmations) {
+        this.confirmations = confirmations;
+    }
+
+    public boolean isBookmark_time() {
+        return bookmark_time;
+    }
+
+    public void setBookmark_time(boolean bookmark_time) {
+        this.bookmark_time = bookmark_time;
     }
 }

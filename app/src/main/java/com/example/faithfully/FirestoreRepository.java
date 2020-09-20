@@ -17,6 +17,9 @@ public class FirestoreRepository {
     public static final String TAG = FirestoreRepository.class.getSimpleName();
     public static final FirebaseFirestore firestoreRepository = FirebaseFirestore.getInstance();
 
+    public static final String HOST_ID_FIELD = "host_ID";
+    public static final String POST_TIME_FIELD = "post_time";
+
     public static final CollectionReference UsersCollRef = firestoreRepository.collection("Users");
     public static final CollectionReference EventCollRef = firestoreRepository.collection("Events");
 
