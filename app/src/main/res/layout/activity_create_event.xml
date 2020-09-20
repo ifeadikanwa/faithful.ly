@@ -15,6 +15,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="Host">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -27,6 +28,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="Title">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -38,6 +40,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="Description">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -49,6 +52,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="Meeting Link">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -60,6 +64,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="Max. # of guests">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,54 +76,63 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Select all your target religions:" />
+            android:text="Select all your target religions:"
+            android:layout_margin="5dp"/>
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/christianity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Christianity" />
+            android:text="Christianity"
+            android:layout_margin="5dp"/>
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/judaism"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Judaism" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/islam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Islam" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/buddhism"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Buddhism" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/hinduism"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Hinduism" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/atheism"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Atheism" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/religiously_Unaffiliated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Religiously Unaffiliated" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/all_of_above"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="All of the above" />
 
 
@@ -127,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:datePickerMode="calendar" />
 
         <TimePicker
@@ -134,6 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:timePickerMode="spinner" />
 
         <Button
@@ -141,6 +157,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
             android:text="Post" />
 
 

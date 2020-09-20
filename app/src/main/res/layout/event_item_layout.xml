@@ -61,6 +61,13 @@
                     android:layout_height="wrap_content"
                     android:text="Cailey Ify Minhat"
                     android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/hostReligion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Christian"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
 
