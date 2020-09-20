@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        getSupportActionBar().hide();
 
         //attach click listener to all the cardviews and set them to open their corresponding activities
 
@@ -48,7 +50,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        CardView createEvent = findViewById(R.id.createAnEvent);
+        LinearLayout createEvent = findViewById(R.id.createAnEvent);
         createEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
