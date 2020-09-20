@@ -168,6 +168,8 @@ public class CreateEvent extends AppCompatActivity {
 
         FirestoreRepository.createEvent(title_str, description_str, meeting_link_str, username, userID, max_guest_num_int, null, event_date, target_religions_list);
 
+        Toast.makeText(this, "Event Posted!", Toast.LENGTH_SHORT).show();
+
         finish();
     }
 
