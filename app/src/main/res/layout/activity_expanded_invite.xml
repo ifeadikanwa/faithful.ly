@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="title"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/userTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="user"
+            android:textSize="25dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
+        android:layout_below="@id/topBar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tag1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_light"
+                android:textSize="20sp"
+                android:text="Questions" />
+
+            <TextView
+                android:id="@+id/tag2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_light"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Prayer" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_light"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="General" />
+        </LinearLayout>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+
+    card_view:cardCornerRadius="16dp"
+    android:layout_height="250dp">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="Description goes here and that is that yipee " />
+
+</androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="48dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="date: 10/12/20" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="11dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="time: 7:00pmEDT"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/maxGuests"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:text="Max Guests"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bookmarkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_bookmark" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/ic_confirmed" />
+
+        <TextView
+            android:id="@+id/attendingTxt"
+            android:layout_width="15dp"
+            android:layout_height="73dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="20"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/saveSeatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="Save a seat" />
+
+    </LinearLayout>
+
+</RelativeLayout>
