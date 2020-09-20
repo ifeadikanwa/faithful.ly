@@ -6,10 +6,16 @@
     android:padding="8dp"
     android:orientation="vertical">
 
+
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,35 +23,100 @@
             android:padding="5dp"
             android:orientation="vertical">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                android:layout_marginTop="3dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                >
+
+                <TextView
+                    android:id="@+id/religionTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="center"
+                    android:text="Christianity, Islam. Judaism, hello world, I am very tired and want to cry and eat"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
+                    android:id="@+id/hostTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host: "/>
+                    android:layout_marginLeft="5dp"
+                    android:text="Host: "
+                    android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/host_name"
+                    android:id="@+id/hostNameTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cailey Ify Minhat"/>
+                    android:text="Cailey Ify Minhat"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/hostReligion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Christian"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/display_event_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Event Title"
-                android:textSize="21sp"
-                android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/display_event_date"
-                android:layout_width="wrap_content"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="19 September, 2020 21:30"
-                android:textSize="18sp"/>
+                android:hint="Title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Max # of Guests">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/maxGuestsTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,31 +125,35 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/bookmarkBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:background="@drawable/ic_bookmark"/>
+                    android:background="@drawable/ic_bookmark" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
                     android:src="@drawable/ic_confirmed"/>
+
                 <TextView
+                    android:id="@+id/guestsTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:text="20"
                     android:layout_gravity="center"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:textSize="26sp"/>
+                    android:text="20"
+                    android:textSize="26sp" />
 
                 <Button
+                    android:id="@+id/saveSeatBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Save a seat"
+                    android:layout_gravity="right"
                     android:layout_weight="1"
-                    android:layout_gravity="right"/>
+                    android:text="Save a seat" />
             </LinearLayout>
 
         </LinearLayout>
