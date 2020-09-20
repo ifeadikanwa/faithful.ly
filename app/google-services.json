@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "2819710757",
+    "firebase_url": "https://faithful-ly-e373d.firebaseio.com",
+    "project_id": "faithful-ly-e373d",
+    "storage_bucket": "faithful-ly-e373d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2819710757:android:13ed996571637ce2d584cc",
+        "android_client_info": {
+          "package_name": "com.example.faithfully"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2819710757-56n0ng01vk367r5gd7sg90p3air25okf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.faithfully",
+            "certificate_hash": "de13fc9ab38e45bcf7221d256b33f294d4ffcee5"
+          }
+        },
+        {
+          "client_id": "2819710757-32sapiclsld97kg75nc7bqfb0p2l3ae4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCScJF65p5UsAw7QbRuNJ9vQbcDHlcZZOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2819710757-32sapiclsld97kg75nc7bqfb0p2l3ae4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
